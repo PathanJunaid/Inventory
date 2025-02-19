@@ -53,7 +53,7 @@ Run the following command to install the necessary dependencies:
 ```bash
 cd app
 prisma generate
-
+```
 ## env
 
 PORT = 5000 
