@@ -39,6 +39,10 @@ export const deleteProduct = asyncHandler(async(req: Request, res: Response)=>{
 export const getproductByID = asyncHandler(async(req: Request, res: Response)=>{
     const {id} = req.params
     const result  = await userService.getProductbyId(id);
+    if(result===null){
+        res.status(404).send(`product not found with id : ${id}`);
+        return;
+    }
     res.send(createResponse(result, `product with id : ${id}`));
 })
 

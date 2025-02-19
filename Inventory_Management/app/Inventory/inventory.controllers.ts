@@ -26,6 +26,9 @@ export const updateInventory = asyncHandler(async(req: Request, res: Response)=>
 export const getInventory = asyncHandler(async(req: Request, res: Response)=>{
     const {id} = req.params;
     const result = await userService.getInventory(id);
+    if(result===null){
+        res.status(404).send(`Inventory not found with id : ${id}`)
+    }
     res.send(createResponse(result, `Inventory with id ${id}`));
 })
 

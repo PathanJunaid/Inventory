@@ -47,3 +47,16 @@ Run the following command to install the necessary dependencies:
 ```bash
 npm install
 
+## env
+
+PORT = 5000 
+JWT_ACCESS_SECRET = "TOP_SECRET" 
+JWT_REFRESH_TOKEN_SECRET = "REFRESH TOKEN"
+JWT_SECRET = 'TOP_SECRET'
+
+env file for prisma at app
+
+DATABASE_URL='postgresql://postgres:password@localhost:5432/postgres'
+
+
+

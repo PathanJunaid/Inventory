@@ -32,7 +32,7 @@ export const createUser = async (data: IUser) => {
         return result;
 
     } catch (e) {
-        console.log("unable to create user");
+        console.log("unable to create user",e);
         return;
     }
 }
@@ -70,7 +70,7 @@ export const getallProducts = async () => {
         return result;
     } catch (e) {
         console.log('unable to fetch all product', e);
-        return false;
+        return null;
     }
 }
 
@@ -119,13 +119,14 @@ export const addProduct = async (data: IProduct) => {
 
     } catch (e) {
         console.log('unable to add product', e);
-        return false
+        return null
 
     }
 }
 
 // update product 
 export const updateProduct = async (data: IProduct, id: string) => {
+    console.log(data)
     try {
         const result = await prisma.product.update({
             where: {
@@ -140,7 +141,7 @@ export const updateProduct = async (data: IProduct, id: string) => {
         return result;
 
     } catch (e) {
-        console.log('error in updating product');
+        console.log('error in updating product',e);
         return null
     }
 }
@@ -179,7 +180,7 @@ export const addwarehouse = async (data: IWarehouse, userId: string) => {
         return result
     } catch (e) {
         console.log('error while adding warehouse', e);
-        return false;
+        return null;
     }
 
 }
@@ -195,7 +196,7 @@ export const deleteWarehouse = async (id: string) => {
 
     } catch (e) {
         console.log('error while deleting warehouse', e);
-        return false;
+        return null;
     }
 }
 
@@ -212,7 +213,7 @@ export const findWarehouse = async (warehouseid: string, userId: string) => {
 
     } catch (e) {
         console.log(`unable to get warehouse with id : ${warehouseid}`, e);
-        return false;
+        return null;
     }
 }
 
@@ -228,7 +229,7 @@ export const getAllWarehouse = async (warehouseid: string, userId: string) => {
 
     } catch (e) {
         console.log('error while deleting warehouse', e);
-        return false;
+        return null;
     }
 }
 

@@ -27,8 +27,8 @@ export const inventoryDocs = {
         }
       },
       "get": {
-        "summary": "Get all inventory entries for a specific product",
-        "description": "This endpoint retrieves all inventory entries based on a specific product ID.",
+        "summary": "Get all inventory entries for a each product",
+        "description": "This endpoint retrieves all inventory entries based on a specific Warehouse ID.",
         "tags": ["Inventory"],
         "parameters": [
           {
@@ -42,6 +42,8 @@ export const inventoryDocs = {
         "responses": {
           "200": { "description": "Inventory data retrieved successfully" },
           "400": { "description": "Invalid input" },
+          "401": { "description": "Unauthrized" },
+          "404": { "description": "Data not found" },
           "500": { "description": "Internal server error" }
         }
       }
@@ -62,7 +64,8 @@ export const inventoryDocs = {
         ],
         "responses": {
           "200": { "description": "Inventory found" },
-          "404": { "description": "Inventory not found" },
+          "401": { "description": "Unauthrized" },
+          "404": { "description": "Data not found" },
           "500": { "description": "Internal server error" }
         }
       },
