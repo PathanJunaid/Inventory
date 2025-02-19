@@ -6,11 +6,11 @@ This backend system is designed to help small businesses manage their inventory,
 
 ## Features
 
-- User management with roles (Admin/User).
+- User management.
 - Multiple stores can be associated with a single user.
 - Real-time stock level tracking.
 - Ability to track and update inventory.
-- Reporting tools for sales and stock insights.
+- Reporting tools stock insights.
 - Low-stock alerts with reorder suggestions.
 
 ## Tech Stack
@@ -46,6 +46,13 @@ Run the following command to install the necessary dependencies:
 
 ```bash
 npm install
+## 3. Install Dependencies
+
+Run the following command to install the necessary dependencies:
+
+```bash
+cd app
+prisma generate
 
 ## env
 
